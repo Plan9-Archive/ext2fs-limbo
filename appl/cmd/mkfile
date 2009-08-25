@@ -1,0 +1,22 @@
+<../../mkconfig
+
+TARG=\
+	ext2dump.dis\
+	ext2fs.dis\
+
+MODULES=\
+	../lib/ext2.m\
+
+SYSMODULES=\
+	arg.m\
+	bufio.m\
+	draw.m\
+	lists.m\
+	string.m\
+	styx.m\
+	sys.m\
+	tables.m\
+
+DISBIN=$ROOT/dis
+
+<$ROOT/mkfiles/mkdis

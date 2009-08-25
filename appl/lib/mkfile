@@ -1,0 +1,14 @@
+<../../mkconfig
+
+TARG=\
+	ext2.dis\
+
+MODULES=\
+	ext2.m\
+
+SYSMODULES=\
+	sys.m\
+
+DISBIN=$ROOT/dis/lib
+
+<$ROOT/mkfiles/mkdis

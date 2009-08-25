@@ -1,0 +1,51 @@
+# status
+
+seems to works, not optimized (no caching).  needs a bit of testing,
+especially on large partitions with many files & directories.
+
+
+# about
+
+ext2fs is an implementation of the ext2 (second extended) file
+system, written in limbo, for inferno.  it gives read-only access
+to the contents of ext2 file systems.
+
+see the manual page ext2fs(4) for details.
+
+
+# download
+
+get the latest version from:
+
+	http://www.ueber.net/code/r/ext2fs
+
+
+# install
+
+to install, first make a file "mkconfig" similar to your inferno's
+installation mkconfig (symlink/bind it).  now type "mk" to compile
+and "mk install" to install.
+
+when building from within inferno, insert SYSHOST=Inferno and ROOT=
+in the mk invocations to override the values in the mkconfig.
+
+
+# licence & author
+
+this code is in the public domain.  the code is written by mechiel
+lukkien, reachable at mechiel@xs4all.nl or mechiel@ueber.net.
+
+
+# todo
+
+- perhaps cache directory blocks while reading directories?
+- perhaps more caching?  eg inode blocks/parsed inodes, indirect blocks.
+- perhaps do latin1 conversion?
+- directory content hashing/btree, for faster walk?
+
+- ext2dump: make more useful?  eg letting you specify inode to print, directory inode to list.
+- ext2dump: allow specifying block/offset to dump superblock from?  and finding the group descriptors?
+- support for the bitmaps?  and some verifications against them?
+
+- handle possible ext3 fields/flags?
+- implement writing

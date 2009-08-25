@@ -1,0 +1,65 @@
+.TH EXT2FS 4
+.SH NAME
+ext2fs - ext2 file system
+.SH SYNOPSIS
+.B ext2fs
+[
+.B -dD
+] [
+.B -abc
+] [
+.B -P
+] [
+.B -u
+.I userfile
+] [
+.B -g
+.I groupfile
+]
+.I ext2file
+.I mtpt
+.SH DESCRIPTION
+.B Ext2fs
+makes the contents of a ext2 (second extended) file system available
+over styx.  Only reading of the file system is supported, writes
+return ``permission denied'' errors.
+.SS Options
+.TP
+.B -d
+Print debug information.  A second
+.B -d enables debug information from the ext2 library.
+.TP
+.B -D
+Print styx traces.
+.TP
+.B -abc
+Standard mount flags.
+.TP
+.B -P
+Disable permission checking.
+.TP
+.BI -u " userfile"
+Read users from a unix ``passwd'' file.
+.TP
+.BI -g " groupfile"
+Read groups from a unix groups file.
+.SH EXAMPLE
+.EX
+ext2fs -u /n/ext2/etc/passwd -g /n/ext2/etc/group '#U*/dev/hdc' /n/ext2
+.EE
+.SH SOURCE
+.B /appl/cmd/ext2fs.b
+.br
+.B /appl/lib/ext2.m
+.br
+.B /appl/lib/ext2.b
+.SH SEE ALSO
+``The Second Extended File System - Internal Layout'', by Dave Poirier
+.SH BUGS
+Only reading is supported.
+.br
+Due to lack of caching, performance is not top notch.
+.br
+Ext3 (journalling) features are not supported.
+.br
+Hashed directories are not supported, making walks slower than necessary.
