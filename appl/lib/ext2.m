@@ -220,7 +220,7 @@ Ext2: module
 		zeroblock:	array of byte;
 
 		init:		fn(fd: ref Sys->FD): (ref Part, string);
-		getblock:	fn(p: self ref Part, i: ref Inode, buf: array of byte, off: big): string;
+		getblock:	fn(p: self ref Part, i: ref Inode, buf: array of byte, bn: big): string;
 		inodewalk:	fn(p: self ref Part, i: ref Inode, elem: string): (ref Inode, ref Entry, string);
 		inoderead:	fn(p: self ref Part, i: ref Inode, n: int, o: big): (array of byte, string);
 		inodeget:	fn(p: self ref Part, i: int): (ref Inode, string);

@@ -22,9 +22,8 @@ get the latest version from:
 
 # install
 
-to install, first make a file "mkconfig" similar to your inferno's
-installation mkconfig (symlink/bind it).  now type "mk" to compile
-and "mk install" to install.
+make sure you have $ROOT set.  now run "mk" to compile and "mk
+install" to install the files.
 
 when building from within inferno, insert SYSHOST=Inferno and ROOT=
 in the mk invocations to override the values in the mkconfig.
